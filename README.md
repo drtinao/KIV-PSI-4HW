@@ -47,13 +47,48 @@ Postup konfigurace:
 - "copy running-config startup-config"
   - označím právě nastavenou kofiguraci jako startovní, zkopíruju ji
   - je potřeba potvrdit přepsání předchozí konfigurace (2x Enter)
+
 1.c) R2
 
 Router typu Cisco 7200 běžící na systému Cisco IOS - verze 15.0(1)M.
 
 Postup konfigurace:
-
-
+- "configure terminal"
+  - příkaz otevře konfigurační rozhraní routeru
+- "interface gigabitEthernet 0/0"
+  - chci konfigurovat port, který je propojen s R1
+- "ip address 192.168.123.254 255.255.255.252"
+  - nastavení síťové adresy a masky
+- "no shutdown"
+  - povolení portu / rozhraní
+- "exit"
+  - odejdu z konfigurace konkrétního rozhraní 
+- "interface gigabitEthernet 1/0"
+  - chci konfigurovat port, který je propojen se switchem Switch1
+- "ip address 192.168.123.1 255.255.255.224"
+  - nastavení síťové adresy a masky
+- "no shutdown"
+  - povolení portu / rozhraní
+- "exit"
+  - odejdu z konfigurace konkrétního rozhraní
+- "ip route 0.0.0.0 0.0.0.0 192.168.123.253"
+  - nastavení cesty přes router R1
+- "ip dhcp excluded-address 192.168.123.1 192.168.123.10"
+  - vynechám prvních 10 možných IP, vznikne pool 20 přidělitelných
+  - první přidělená IP by měla být 192.168.123.11
+- "ip dhcp pool 20_IP_POOL"
+  - definuji pool IP adres, které se budou přidělovat klientům
+- "network 192.168.123.0 255.255.255.224"
+- "default-router 192.168.123.1"
+- "dns-server 8.8.8.8 8.8.4.4"
+  - použiji Google DNS servery
+- "exit"
+  - odejdu z konfigurace dhcp
+- "exit"
+  - odejdu z konfiguračního terminálu
+- "copy running-config startup-config"
+  - označím právě nastavenou kofiguraci jako startovní, zkopíruju ji
+  - je potřeba potvrdit přepsání předchozí konfigurace (2x Enter)
 1.d) Switch1
 1.e) psi-base-node-1
 1.f) psi-base-node-2
