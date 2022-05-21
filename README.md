@@ -1,5 +1,8 @@
 # KIV-PSI-4HW
 Fourth HW assigned in KIV/PSI
+
+![Alt text](./whole_sys_architecture.png "Architektura systému - diagram")
+
 1) Popis prvků + konfigurace
 
 Podkapitoly obsahují popis jednotlivých prvků, jež jsou přítomny ve schématu sítě. Kde je to potřeba, je popsán i postup, jaký konfigurační postup byl u daného zařízení proveden.
