@@ -5,7 +5,7 @@ Fourth HW assigned in KIV/PSI
 
 1) Popis prvků + konfigurace
 
-Podkapitoly obsahují popis jednotlivých prvků, jež jsou přítomny ve schématu sítě. Kde je to potřeba, je popsán i postup, jaký konfigurační postup byl u daného zařízení proveden.
+Podkapitoly obsahují popis jednotlivých prvků, jež jsou přítomny ve schématu sítě. Kde je to potřeba, je popsán i konfigurační postup, jaký postup byl u daného zařízení proveden.
 
 1.a) NAT1
 
@@ -92,6 +92,7 @@ Postup konfigurace:
 - "copy running-config startup-config"
   - označím právě nastavenou kofiguraci jako startovní, zkopíruju ji
   - je potřeba potvrdit přepsání předchozí konfigurace (2x Enter)
+
 1.d) Switch1
 
 Klasický switch, na který jsou připojena síťová zařízení
@@ -112,4 +113,4 @@ Pro správné spuštění je potřeba importovat image Alpine Linuxu, viz https:
 
 Po spuštění všech zařízení v konfiguraci je potřeba u strojů "AlpineLinux-1" a "AlpineLinux-2" spustit příkaz "udhcpc", který stroji přidělí novou IP adresu. Jeden ze strojů by měl získat IP adresu "192.168.123.11", druhý pak "192.168.123.12".
 
-Následně lze otestovat ping pomocí příkaz "ping www.google.cz".
+Následně lze otestovat ping pomocí příkazu "ping www.google.cz".
